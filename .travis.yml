@@ -10,6 +10,9 @@ php:
 # Note: Code coverage requires php-xDebug extension enabled on CI server
 
 install:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
   - travis_retry composer install --no-interaction --no-suggest
 
 # Testing the app (see phpunit.xml) for configs, generating Code Coverage report
@@ -19,8 +22,7 @@ script:
 #after_script:
 
 after_success:
-  # Submit coverage report to https://codecov.io
-  - bash <(curl -s https://codecov.io/bash)
+  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build  -t clover --exit-code $TRAVIS_TEST_RESULT; fi
 
 #after_failure:
 
