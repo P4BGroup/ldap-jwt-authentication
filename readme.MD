@@ -3,6 +3,10 @@ P4BGroup Authentication
 
 JWT Authentication service using LDAP connections for Phalcon Projects
 
+[![codecov](https://codecov.io/gh/P4BGroup/ldap-jwt-authentication/branch/master/graph/badge.svg)](https://codecov.io/gh/P4BGroup/ldap-jwt-authentication)
+
+[![Build Status](https://travis-ci.com/P4BGroup/ldap-jwt-authentication.svg?branch=master)](https://travis-ci.com/P4BGroup/ldap-jwt-authentication)
+
 Usage
 --- 
 
