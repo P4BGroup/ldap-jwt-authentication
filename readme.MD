@@ -3,7 +3,6 @@ P4BGroup Authentication
 
 JWT Authentication service using LDAP connections for Phalcon Projects
 
-
 Usage
 --- 
 
