@@ -1,0 +1,32 @@
+{
+  "name": "p4bgroup/authentication",
+  "type": "library",
+  "description": "JWT Authentication using LDAP connections",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Flaviu Chelaru",
+      "email": "flaviu.chelaru@p4b.ro"
+    }
+  ],
+  "require": {
+    "php": "~7.2",
+    "ext-json": "*",
+    "ext-ldap": "*",
+    "firebase/php-jwt": "~5.0",
+    "zendframework/zend-ldap": "~2.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "P4BGroup\\Authentication\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "P4BGroup\\Authentication\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.1"
+  }
+}
