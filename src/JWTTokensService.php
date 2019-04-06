@@ -31,8 +31,18 @@ class JWTTokensService
         string $decodeKey
     ) {
         $this->algorithm = $algorithm;
-        $this->encodeKey = $encodeKey;
-        $this->decodeKey = $decodeKey;
+        $this->encodeKey = $this->readKey($encodeKey);
+        $this->decodeKey = $this->readKey($decodeKey);
+    }
+
+    /**
+     * @param $key
+     *
+     * @return string
+     */
+    private function readKey($key): string
+    {
+        return file_exists($key) && is_readable($key) ? file_get_contents($key) : $key;
     }
 
     /**
