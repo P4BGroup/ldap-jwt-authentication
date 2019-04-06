@@ -3,7 +3,7 @@ P4BGroup Authentication
 
 JWT Authentication service using LDAP connections for Phalcon Projects
 
-[![codecov](https://codecov.io/gh/P4BGroup/ldap-jwt-authentication/branch/master/graph/badge.svg)](https://codecov.io/gh/P4BGroup/ldap-jwt-authentication) [![Build Status](https://travis-ci.com/P4BGroup/ldap-jwt-authentication.svg?branch=master)](https://travis-ci.com/P4BGroup/ldap-jwt-authentication)
+[![Latest Stable Version](https://poser.pugx.org/p4bgroup/ldap-jwt-authentication/v/stable)](https://packagist.org/packages/p4bgroup/ldap-jwt-authentication) [![License](https://poser.pugx.org/p4bgroup/ldap-jwt-authentication/license)](https://packagist.org/packages/p4bgroup/ldap-jwt-authentication) [![Total Downloads](https://poser.pugx.org/p4bgroup/ldap-jwt-authentication/downloads)](https://packagist.org/packages/p4bgroup/ldap-jwt-authentication)  [![codecov](https://codecov.io/gh/P4BGroup/ldap-jwt-authentication/branch/master/graph/badge.svg)](https://codecov.io/gh/P4BGroup/ldap-jwt-authentication) [![Build Status](https://travis-ci.com/P4BGroup/ldap-jwt-authentication.svg?branch=master)](https://travis-ci.com/P4BGroup/ldap-jwt-authentication) [![composer.lock](https://poser.pugx.org/p4bgroup/ldap-jwt-authentication/composerlock)](https://packagist.org/packages/p4bgroup/ldap-jwt-authentication)
 
 Usage
 --- 
