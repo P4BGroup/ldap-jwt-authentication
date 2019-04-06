@@ -297,43 +297,4 @@ class Claims implements JsonSerializable
         $this->data = $data;
         return $this;
     }
-
-    /**
-     * @param string $audience
-     *
-     * @return Claims
-     */
-    public function withAudience(string $audience): Claims
-    {
-        $claims = clone $this;
-        $claims->setAudience($audience);
-
-        return $claims;
-    }
-
-    /**
-     * @param string $subject
-     *
-     * @return Claims
-     */
-    public function withSubject(string $subject): Claims
-    {
-        $claims = clone $this;
-        $claims->setSubject($subject);
-
-        return $claims;
-    }
-
-    /**
-     * @param DateTimeInterface $dateTime
-     *
-     * @return Claims
-     */
-    public function withExpirationTime(DateTimeInterface $dateTime): Claims
-    {
-        $claims = clone $this;
-        $claims->setExpirationTime($dateTime);
-
-        return $claims;
-    }
 }

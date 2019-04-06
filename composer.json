@@ -1,5 +1,5 @@
 {
-  "name": "p4bgroup/authentication",
+  "name": "p4bgroup/ldap-jwt-authentication",
   "type": "library",
   "description": "JWT Authentication using LDAP connections",
   "license": "MIT",

@@ -25,7 +25,3 @@ $accessToken = $jwtTokensService->encode($claims);
 $refreshToken = $jwtTokensService->encode($claims->withSubject(Claims::SUBJECT_REFRESH)->withExpirationTime(new DateTime("+1 hour"));
 ```
 
-Q&A
----
-Q: In claims there are 2 methods to set subject - withSubject and setSubject. What is the difference?  
-A: The difference is that "with*" methods will create a new reference of the claims object.
