@@ -11,7 +11,7 @@ Usage
 ```php
 $ldap = new Zend\Ldap\Ldap([..]);
 $authService = new AuthenticationService($ldap);
-$jwtTokensService = new JWTTokensService();
+$jwtTokensService = new JWTTokensService($algorithm, $encodeKey, $decodeKey);
 
 /** @param P4BGroup\Authentication\User $user */
 $user = $authService->authenticateUser($username, $password, $userBaseDn);
@@ -19,9 +19,9 @@ $user = $authService->authenticateUser($username, $password, $userBaseDn);
 $claims = new P4BGroup\Authentication\Claims();
 $claims->setData($user->toArray())
 ->setSubject(Claims::SUBJECT_REFRESH)
-->setExpirationTime(new DateTime(+10 minutes))
+->setExpirationTime(new DateTime("+10 minutes"))
 
 $accessToken = $jwtTokensService->encode($claims);
-$refreshToken = $jwtTokensService->encode($claims->withSubject(Claims::SUBJECT_REFRESH)->withExpirationTime(new DateTime("+1 hour"));
+$refreshToken = $jwtTokensService->encode($claims->setSubject(Claims::SUBJECT_REFRESH)->setExpirationTime(new DateTime("+1 hour"));
 ```
 
