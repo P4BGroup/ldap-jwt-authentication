@@ -46,9 +46,11 @@ class AuthenticationService
         ]);
 
         try {
-            $this->ldapConnection->setOptions([
-                'baseDn' => $baseDn
-            ]);
+            if ($baseDn !== null) {
+                $this->ldapConnection->setOptions([
+                    'baseDn' => $baseDn
+                ]);
+            }
 
             $users = $this->ldapConnection->search($filters, $baseDn, Ldap::SEARCH_SCOPE_ONE);
 
