@@ -28,12 +28,14 @@ class AuthenticationService
      * @param string $username
      * @param string $password
      * @param string|null $baseDn
+     * @param int $ldapSearchScope
+     *            (default value: \Zend\Ldap\Ldap::SEARCH_SCOPE_ONE)
      *
      * @return User
      * @throws AuthenticationException
      *
      */
-    public function authenticateUser(string $username, string $password, string $baseDn = null): User
+    public function authenticateUser(string $username, string $password, string $baseDn = null, $ldapSearchScope = Ldap::SEARCH_SCOPE_ONE): User
     {
         $filters = new AndFilter([
             'objectclass=user',
@@ -52,7 +54,7 @@ class AuthenticationService
                 ]));
             }
 
-            $users = $this->ldapConnection->search($filters, $baseDn, Ldap::SEARCH_SCOPE_ONE);
+            $users = $this->ldapConnection->search($filters, $baseDn, $ldapSearchScope);
 
             $this->ldapConnection->bind($users->dn(), $password);
             $user = $this->ldapConnection->getEntry($this->ldapConnection->getBoundUser());
