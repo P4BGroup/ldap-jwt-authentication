@@ -3,9 +3,9 @@
 namespace P4BGroup\Authentication;
 
 use Exception;
-use Zend\Ldap\Filter\AndFilter;
-use Zend\Ldap\Filter\OrFilter;
-use Zend\Ldap\Ldap;
+use Laminas\Ldap\Filter\AndFilter;
+use Laminas\Ldap\Filter\OrFilter;
+use Laminas\Ldap\Ldap;
 
 class AuthenticationService
 {
