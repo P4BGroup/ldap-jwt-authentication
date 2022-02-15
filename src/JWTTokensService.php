@@ -57,14 +57,15 @@ class JWTTokensService
 
     /**
      * @param string $token
+     * @param array|null $allowedAlgs
      *
      * @return Claims
      * @throws DecodeException
      */
-    public function decode(string $token): Claims
+    public function decode(string $token, ?array $allowedAlgs = null): Claims
     {
         try {
-            $rawClaims = JWT::decode($token, $this->decodeKey, array_keys(JWT::$supported_algs));
+            $rawClaims = JWT::decode($token, $this->decodeKey, $allowedAlgs ?? array_keys(JWT::$supported_algs));
         } catch (Throwable $exception) {
             throw new DecodeException('UNABLE_TO_DECODE', 400, $exception);
         }
