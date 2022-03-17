@@ -5,9 +5,9 @@ namespace P4BGroup\Authentication;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionException;
-use Zend\Ldap\Collection;
-use Zend\Ldap\Filter\AbstractLogicalFilter;
-use Zend\Ldap\Ldap;
+use Laminas\Ldap\Collection;
+use Laminas\Ldap\Filter\AbstractLogicalFilter;
+use Laminas\Ldap\Ldap;
 
 class AuthenticationServiceTest extends TestCase
 {

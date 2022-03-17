@@ -9,7 +9,7 @@ Usage
 --- 
 
 ```php
-$ldap = new Zend\Ldap\Ldap([..]);
+$ldap = new Laminas\Ldap\Ldap([..]);
 $authService = new AuthenticationService($ldap);
 $jwtTokensService = new JWTTokensService($algorithm, $encodeKey, $decodeKey);
 
