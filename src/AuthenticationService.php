@@ -29,7 +29,7 @@ class AuthenticationService
      * @param string $password
      * @param string|null $baseDn
      * @param int $ldapSearchScope
-     *            (default value: \Zend\Ldap\Ldap::SEARCH_SCOPE_ONE)
+     *            (default value: \Laminas\Ldap\Ldap::SEARCH_SCOPE_ONE)
      *
      * @return User
      * @throws AuthenticationException
