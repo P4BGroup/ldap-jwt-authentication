@@ -52,7 +52,7 @@ class JWTTokensService
      */
     public function encode(Claims $claims): string
     {
-        return JWT::encode($claims, $this->encodeKey, $this->algorithm);
+        return JWT::encode($claims->toArray(), $this->encodeKey, $this->algorithm);
     }
 
     /**
