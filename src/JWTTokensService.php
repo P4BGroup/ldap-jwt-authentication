@@ -3,6 +3,7 @@
 namespace P4BGroup\Authentication;
 
 use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 use Throwable;
 
 class JWTTokensService
@@ -52,20 +53,19 @@ class JWTTokensService
      */
     public function encode(Claims $claims): string
     {
-        return JWT::encode($claims, $this->encodeKey, $this->algorithm);
+        return JWT::encode($claims->toArray(), $this->encodeKey, $this->algorithm);
     }
 
     /**
      * @param string $token
-     * @param array|null $allowedAlgs
      *
      * @return Claims
      * @throws DecodeException
      */
-    public function decode(string $token, ?array $allowedAlgs = null): Claims
+    public function decode(string $token): Claims
     {
         try {
-            $rawClaims = JWT::decode($token, $this->decodeKey, $allowedAlgs ?? array_keys(JWT::$supported_algs));
+            $rawClaims = JWT::decode($token, new Key($this->decodeKey, $this->algorithm));
         } catch (Throwable $exception) {
             throw new DecodeException('UNABLE_TO_DECODE', 400, $exception);
         }
